@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const db = require('./config/config').mongoURI
+const dbURI = require('./config/config').mongoURI
+const item = require('./routes/API/items')
 
 // Init Port
 const PORT = process.env.PORT || require('./config/config').PORT
@@ -10,11 +11,12 @@ const app = express()
 
 // Middleware
 app.use(express.json())
+app.use('/api/items', item)
 
 !(async () => {
     try {
         // Connect to mongoDB
-        await mongoose.connect(db, {
+        await mongoose.connect(dbURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true

@@ -13,7 +13,8 @@ const app = express()
 app.use(express.json())
 app.use('/api/items', item)
 
-!(async () => {
+// Start Server
+;(async () => {
     try {
         // Connect to mongoDB
         await mongoose.connect(dbURI, {

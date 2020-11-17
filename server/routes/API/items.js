@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
 /* @route POST api/items
-   @desc Create a item
+   @desc Create an item
    @access Public */
 router.post('/', (req, res) => {
     const newItem = new Item({
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
 })
 
 /* @route DELETE api/items/:id
-   @desc Delete a item
+   @desc Delete an item
    @access Public */
 router.delete('/:id', async (req, res) => {
     try {

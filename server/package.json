@@ -4,8 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install cd ../client",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "client": "cd ../client && npm start",
+    "server": "concurrently \"npm run dev\" \"npm run client\""
   },
   "repository": {
     "type": "git",
